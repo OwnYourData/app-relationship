@@ -35,7 +35,8 @@ encode with https://www.base64encode.org/
                        "eu.ownyourdata.scheduler.email_config:update",
                        "eu.ownyourdata.scheduler.email_config:delete"]
 }
-ew0KICAgICAgICAibmFtZSI6IlJlbGF0aW9uc2hpcCBBcHAiLA0KICAgICAgICAiaWRlbnRpZmllciI6ImV1Lm93bnlvdXJkYXRhLnJlbGF0aW9uc2hpcCIsDQogICAgICAgICJ0eXBlIjoiZXh0ZXJuYWwiLA0KICAgICAgICAiZGVzY3JpcHRpb24iOiJ0cmFjayB5b3VyIHJlbGF0aW9uc2hpcCBzdGF0dXMiLA0KICAgICAgICAicGVybWlzc2lvbnMiOlsiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLmVuZXJneTpyZWFkIiwNCiAgICAgICAgICAgICAgICAgICAgICAgImV1Lm93bnlvdXJkYXRhLnJlbGF0aW9uc2hpcC5lbmVyZ3k6d3JpdGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLmVuZXJneTp1cGRhdGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLmVuZXJneTpkZWxldGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLnNhdGlzZmFjdGlvbjpyZWFkIiwNCiAgICAgICAgICAgICAgICAgICAgICAgImV1Lm93bnlvdXJkYXRhLnJlbGF0aW9uc2hpcC5zYXRpc2ZhY3Rpb246d3JpdGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLnNhdGlzZmFjdGlvbjp1cGRhdGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLnNhdGlzZmFjdGlvbjpkZWxldGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLmhlYWx0aDpyZWFkIiwNCiAgICAgICAgICAgICAgICAgICAgICAgImV1Lm93bnlvdXJkYXRhLnJlbGF0aW9uc2hpcC5oZWFsdGg6d3JpdGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLmhlYWx0aDp1cGRhdGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLmhlYWx0aDpkZWxldGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLnJlbGF4YXRpb246cmVhZCIsDQogICAgICAgICAgICAgICAgICAgICAgICJldS5vd255b3VyZGF0YS5yZWxhdGlvbnNoaXAucmVsYXhhdGlvbjp3cml0ZSIsDQogICAgICAgICAgICAgICAgICAgICAgICJldS5vd255b3VyZGF0YS5yZWxhdGlvbnNoaXAucmVsYXhhdGlvbjp1cGRhdGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLnJlbGF4YXRpb246ZGVsZXRlIiwNCiAgICAgICAgICAgICAgICAgICAgICAgImV1Lm93bnlvdXJkYXRhLnJlbGF0aW9uc2hpcC5nZW5lcmFsOnJlYWQiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLmdlbmVyYWw6d3JpdGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLmdlbmVyYWw6dXBkYXRlIiwNCiAgICAgICAgICAgICAgICAgICAgICAgImV1Lm93bnlvdXJkYXRhLnJlbGF0aW9uc2hpcC5nZW5lcmFsOmRlbGV0ZSIsDQogICAgICAgICAgICAgICAgICAgICAgICJldS5vd255b3VyZGF0YS5zY2hlZHVsZXI6cmVhZCIsDQogICAgICAgICAgICAgICAgICAgICAgICJldS5vd255b3VyZGF0YS5zY2hlZHVsZXI6d3JpdGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEuc2NoZWR1bGVyOnVwZGF0ZSIsDQogICAgICAgICAgICAgICAgICAgICAgICJldS5vd255b3VyZGF0YS5zY2hlZHVsZXI6ZGVsZXRlIiwNCiAgICAgICAgICAgICAgICAgICAgICAgImV1Lm93bnlvdXJkYXRhLnNjaGVkdWxlci5lbWFpbF9jb25maWc6cmVhZCIsDQogICAgICAgICAgICAgICAgICAgICAgICJldS5vd255b3VyZGF0YS5zY2hlZHVsZXIuZW1haWxfY29uZmlnOndyaXRlIiwNCiAgICAgICAgICAgICAgICAgICAgICAgImV1Lm93bnlvdXJkYXRhLnNjaGVkdWxlci5lbWFpbF9jb25maWc6dXBkYXRlIiwNCiAgICAgICAgICAgICAgICAgICAgICAgImV1Lm93bnlvdXJkYXRhLnNjaGVkdWxlci5lbWFpbF9jb25maWc6ZGVsZXRlIl0NCn0='
+ew0KICAgICAgICAibmFtZSI6IlJlbGF0aW9uc2hpcCBBcHAiLA0KICAgICAgICAiaWRlbnRpZmllciI6ImV1Lm93bnlvdXJkYXRhLnJlbGF0aW9uc2hpcCIsDQogICAgICAgICJ0eXBlIjoiZXh0ZXJuYWwiLA0KICAgICAgICAiZGVzY3JpcHRpb24iOiJ0cmFjayB5b3VyIHJlbGF0aW9uc2hpcCBzdGF0dXMiLA0KICAgICAgICAicGVybWlzc2lvbnMiOlsiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLmVuZXJneTpyZWFkIiwNCiAgICAgICAgICAgICAgICAgICAgICAgImV1Lm93bnlvdXJkYXRhLnJlbGF0aW9uc2hpcC5lbmVyZ3k6d3JpdGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLmVuZXJneTp1cGRhdGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLmVuZXJneTpkZWxldGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLnNhdGlzZmFjdGlvbjpyZWFkIiwNCiAgICAgICAgICAgICAgICAgICAgICAgImV1Lm93bnlvdXJkYXRhLnJlbGF0aW9uc2hpcC5zYXRpc2ZhY3Rpb246d3JpdGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLnNhdGlzZmFjdGlvbjp1cGRhdGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLnNhdGlzZmFjdGlvbjpkZWxldGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLmhlYWx0aDpyZWFkIiwNCiAgICAgICAgICAgICAgICAgICAgICAgImV1Lm93bnlvdXJkYXRhLnJlbGF0aW9uc2hpcC5oZWFsdGg6d3JpdGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLmhlYWx0aDp1cGRhdGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLmhlYWx0aDpkZWxldGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLnJlbGF4YXRpb246cmVhZCIsDQogICAgICAgICAgICAgICAgICAgICAgICJldS5vd255b3VyZGF0YS5yZWxhdGlvbnNoaXAucmVsYXhhdGlvbjp3cml0ZSIsDQogICAgICAgICAgICAgICAgICAgICAgICJldS5vd255b3VyZGF0YS5yZWxhdGlvbnNoaXAucmVsYXhhdGlvbjp1cGRhdGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLnJlbGF4YXRpb246ZGVsZXRlIiwNCiAgICAgICAgICAgICAgICAgICAgICAgImV1Lm93bnlvdXJkYXRhLnJlbGF0aW9uc2hpcC5nZW5lcmFsOnJlYWQiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLmdlbmVyYWw6d3JpdGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEucmVsYXRpb25zaGlwLmdlbmVyYWw6dXBkYXRlIiwNCiAgICAgICAgICAgICAgICAgICAgICAgImV1Lm93bnlvdXJkYXRhLnJlbGF0aW9uc2hpcC5nZW5lcmFsOmRlbGV0ZSIsDQogICAgICAgICAgICAgICAgICAgICAgICJldS5vd255b3VyZGF0YS5zY2hlZHVsZXI6cmVhZCIsDQogICAgICAgICAgICAgICAgICAgICAgICJldS5vd255b3VyZGF0YS5zY2hlZHVsZXI6d3JpdGUiLA0KICAgICAgICAgICAgICAgICAgICAgICAiZXUub3dueW91cmRhdGEuc2NoZWR1bGVyOnVwZGF0ZSIsDQogICAgICAgICAgICAgICAgICAgICAgICJldS5vd255b3VyZGF0YS5zY2hlZHVsZXI6ZGVsZXRlIiwNCiAgICAgICAgICAgICAgICAgICAgICAgImV1Lm93bnlvdXJkYXRhLnNjaGVkdWxlci5lbWFpbF9jb25maWc6cmVhZCIsDQogICAgICAgICAgICAgICAgICAgICAgICJldS5vd255b3VyZGF0YS5zY2hlZHVsZXIuZW1haWxfY29uZmlnOndyaXRlIiwNCiAgICAgICAgICAgICAgICAgICAgICAgImV1Lm93bnlvdXJkYXRhLnNjaGVkdWxlci5lbWFpbF9jb25maWc6dXBkYXRlIiwNCiAgICAgICAgICAgICAgICAgICAgICAgImV1Lm93bnlvdXJkYXRhLnNjaGVkdWxlci5lbWFpbF9jb25maWc6ZGVsZXRlIl0NCn0=
+'
 
 # Setup and config ========================================
 # install.packages(c('shiny', 'shinyBS', 'DT', 'tidyr', 'digest', 'RCurl', 'jsonlite', 'dplyr'), repos='https://cran.rstudio.com/')
@@ -185,7 +186,6 @@ shinyServer(function(input, output, session){
                                           data[paste0(category, '2')]) > 4.1),
                                 'date']))
                         delta <- 1200000
-                        save(data, data1, data2, curve1, curve2, d, delta, file='tmpPlot.RData')
                         for(i in 1:length(d)){
                                 polygon(x=c(curve1$x[which(curve1$x>=(d[i]-delta) & curve1$x<=(d[i]+delta))], 
                                             rev(curve2$x[which(curve2$x>=(d[i]-delta) & curve2$x<=(d[i]+delta))])), 
@@ -250,7 +250,7 @@ shinyServer(function(input, output, session){
                                      value2=value2)
                         if (nrow(existData) > 0) {
                                 updateRecord(repo, url, data, existData$id)
-                        } else {mea
+                        } else {
                                 writeRecord(repo, url, data)
                         }
                 }        
@@ -400,97 +400,145 @@ shinyServer(function(input, output, session){
                 }
         }
         
-        emailReminderStatus <- reactive({
+        setSchedulerEmails <- function(session, email, number){
+                updateTextInput(session, paste0('email', number), 
+                                value=email)
+        }
+        
+        getPiaSchedulerEmails <- function(repo, number){
+                url <- itemsUrl(repo[['url']], 
+                                schedulerKey())
+                retVal <- readItems(repo, url)
+                if(nrow(retVal) == 0) {
+                        vector()
+                } else {
+                        retVal <- retVal[retVal$repo == repo[['app_key']] & 
+                                         retVal$task == 'email', ]
+                        useVal <- data.frame()
+                        for(i in 1:nrow(retVal)){
+                                if(number == 1){
+                                        if(colnames(retVal$parameters$response_structure[[i]]$fields)[2] == 'value') {
+                                                useVal <- retVal[i,]
+                                        }
+                                } else {
+                                        if(colnames(retVal$parameters$response_structure[[i]]$fields)[2] == 'value2') {
+                                                useVal <- retVal[i,]
+                                        }
+                                }
+                        }
+                        if(nrow(useVal) > 0) {
+                                c(id=useVal$id,
+                                  email=useVal$parameters$address)
+                        } else {
+                                vector()
+                        }
+                }
+        }
+
+        emailReminderStatus <- function(number){
                 repo <- relshpRepo()
                 piaMailConfig <- getPiaEmailConfig(repo)
-                piaSchedulerEmail <- getPiaSchedulerEmail(repo)
+                piaSchedulerEmail <- getPiaSchedulerEmails(repo, number)
                 piaEmail <- ''
                 piaEmailId <- NA
-                if (length(piaMailConfig) == 0) {
-                        'no mail config'
-                } else {
-                        if (length(piaSchedulerEmail) > 0) {
-                                piaEmail <- piaSchedulerEmail[['email']]
-                                piaEmailId <-  piaSchedulerEmail[['id']]
-                        }
-                        localEmail <- as.character(input$email)
-                        if(validEmail(localEmail)) {
-                                if (localEmail == piaEmail) {
-                                        'email in sync'
-                                } else {
+                if (length(piaSchedulerEmail) > 0) {
+                        piaEmail <- piaSchedulerEmail[['email']]
+                        piaEmailId <-  piaSchedulerEmail[['id']]
+                }
+                localEmail <- as.character(input[[paste0('email', number)]])
+                if(validEmail(localEmail)) {
+                        if (localEmail == piaEmail) {
+                                'email in sync'
+                        } else {
+                                if(number == 1){
                                         energy_fields <- list(
                                                 date='Date.now',
                                                 value='line_1(integer)')
-                                        energy_structure <- list(
-                                                repo=repo_energy,
-                                                fields=energy_fields)
                                         health_fields <- list(
                                                 date='Date.now',
                                                 value='line_2(integer)')
-                                        health_structure <- list(
-                                                repo=repo_health,
-                                                fields=health_fields)
                                         satisfaction_fields <- list(
                                                 date='Date.now',
                                                 value='line_3(integer)')
-                                        satisfaction_structure <- list(
-                                                repo=repo_satisfaction,
-                                                fields=satisfaction_fields)
                                         relaxation_fields <- list(
                                                 date='Date.now',
                                                 value='line_4(integer)')
-                                        relaxation_structure <- list(
-                                                repo=repo_relaxation,
-                                                fields=relaxation_fields)
                                         general_fields <- list(
                                                 date='Date.now',
                                                 value='line_5(integer)')
-                                        general_structure <- list(
-                                                repo=repo_general,
-                                                fields=general_fields)
-                                        response_structure <- list(
-                                                health_structure,
-                                                energy_structure,
-                                                satisfaction_structure,
-                                                relaxation_structure,
-                                                general_structure)
-                                        content <- 'Bewerte die folgenden 5 Aspekte der letzten Woche auf einer Skala von 1 (gering) bis 10 (hoch) in der angegebenen Reihenfolge und verwende jeweils 1 Zeile: Energie, Gesundheit, Zufriedenheit, Entspannung und Allgemein.'
-                                        timePattern <- '0 9 * * 0'
-                                        if (piaEmail == '') {
-                                                writeSchedulerEmail(
-                                                        repo,
-                                                        localEmail,
-                                                        content,
-                                                        timePattern,
-                                                        response_structure)
-                                                'email saved'
-                                        } else {
-                                                updateSchedulerEmail(
-                                                        repo,
-                                                        localEmail,
-                                                        content,
-                                                        timePattern,
-                                                        response_structure,
-                                                        piaEmailId)
-                                                'email updated'
-                                        }
+                                } else {
+                                        energy_fields <- list(
+                                                date='Date.now',
+                                                value2='line_1(integer)')
+                                        health_fields <- list(
+                                                date='Date.now',
+                                                value2='line_2(integer)')
+                                        satisfaction_fields <- list(
+                                                date='Date.now',
+                                                value2='line_3(integer)')
+                                        relaxation_fields <- list(
+                                                date='Date.now',
+                                                value2='line_4(integer)')
+                                        general_fields <- list(
+                                                date='Date.now',
+                                                value2='line_5(integer)')
+                                }
+                                energy_structure <- list(
+                                        repo=repo_energy,
+                                        fields=energy_fields)
+                                health_structure <- list(
+                                        repo=repo_health,
+                                        fields=health_fields)
+                                satisfaction_structure <- list(
+                                        repo=repo_satisfaction,
+                                        fields=satisfaction_fields)
+                                relaxation_structure <- list(
+                                        repo=repo_relaxation,
+                                        fields=relaxation_fields)
+                                general_structure <- list(
+                                        repo=repo_general,
+                                        fields=general_fields)
+                                response_structure <- list(
+                                        health_structure,
+                                        energy_structure,
+                                        satisfaction_structure,
+                                        relaxation_structure,
+                                        general_structure)
+                                content <- 'Bewerte die folgenden 5 Aspekte der letzten Woche auf einer Skala von 1 (gering) bis 10 (hoch) in der angegebenen Reihenfolge und verwende jeweils 1 Zeile: Energie, Gesundheit, Zufriedenheit, Entspannung und Allgemein.'
+                                timePattern <- '0 9 * * 0'
+                                if (piaEmail == '') {
+                                        writeSchedulerEmail(
+                                                repo,
+                                                localEmail,
+                                                content,
+                                                timePattern,
+                                                response_structure)
+                                        'email saved'
+                                } else {
+                                        updateSchedulerEmail(
+                                                repo,
+                                                localEmail,
+                                                content,
+                                                timePattern,
+                                                response_structure,
+                                                piaEmailId)
+                                        'email updated'
+                                }
+                        } 
+                } else {
+                        if (nchar(localEmail) == 0) {
+                                if (piaEmail == '') {
+                                        'missing email'
+                                } else {
+                                        setSchedulerEmails(session, piaEmail, number)
+                                        'email loaded'
                                 }
                         } else {
-                                if (nchar(localEmail) == 0) {
-                                        if (piaEmail == '') {
-                                                'missing email'
-                                        } else {
-                                                setSchedulerEmail(session, piaEmail)
-                                                'email loaded'
-                                        }
-                                } else {
-                                        'invalid email'
-                                }
+                                'invalid email'
                         }
                 }
-                
-        })
-        
+        }
+
         output$mail_config <- renderText({
                 repo <- relshpRepo()
                 retVal <- emailConfigStatus(repo)
@@ -503,16 +551,29 @@ shinyServer(function(input, output, session){
         })
         
         output$email_status <- renderText({
-                retVal <- emailReminderStatus()
-                paste('<strong>Status:</strong>',
-                      switch(retVal,
-                             'no mail config' = 'Email-Konfiguration noch nicht vorhanden',
-                             'missing email'  = 'fehlende Emailadresse',
-                             'invalid email'  = 'ungültige Emailadresse',
-                             'email loaded'   = 'Emailadresse aus PIA geladen',
-                             'email in sync'  = 'periodische Email-Benachrichtigungen werden versandt',
-                             'email saved'    = 'Emailadresse in PIA gespeichert',
-                             'email updated'  = 'Emailadresse in PIA aktualisiert'))
+                repo <- relshpRepo()
+                piaMailConfig <- getPiaEmailConfig(repo)
+                if (length(piaMailConfig) == 0) {
+                        '<strong>Status:</strong> Email-Konfiguration noch nicht vorhanden'
+                } else {
+                        retVal1 <- emailReminderStatus(1)
+                        status1 <- switch(retVal1,
+                                          'missing email'  = 'fehlende Emailadresse für Person #1',
+                                          'invalid email'  = 'ungültige Emailadresse für Person #1',
+                                          'email loaded'   = 'Emailadresse für Person #1 aus PIA geladen',
+                                          'email in sync'  = 'periodische Email-Benachrichtigungen für Person #1 werden versandt',
+                                          'email saved'    = 'Emailadresse für Person #1 in PIA gespeichert',
+                                          'email updated'  = 'Emailadresse für Person #1 in PIA aktualisiert')
+                        retVal2 <- emailReminderStatus(2)
+                        status2 <- switch(retVal2,
+                                          'missing email'  = 'fehlende Emailadresse für Person #2',
+                                          'invalid email'  = 'ungültige Emailadresse für Person #2',
+                                          'email loaded'   = 'Emailadresse für Person #2 aus PIA geladen',
+                                          'email in sync'  = 'periodische Email-Benachrichtigungen für Person #2 werden versandt',
+                                          'email saved'    = 'Emailadresse für Person #2 in PIA gespeichert',
+                                          'email updated'  = 'Emailadresse für Person #2 in PIA aktualisiert')
+                        paste0(status1, ', ', status2)
+                }
         })
 
 })

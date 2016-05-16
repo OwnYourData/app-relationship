@@ -81,7 +81,8 @@ shinyUI(fluidPage(
 # Scheduler ===============================================
                         tabPanel("Benachrichtigung", 
                                  h3('Benachrichtigung'),
-                                 textInput('email', 'Emailadresse:'),
+                                 textInput('email1', 'Emailadresse für Person #1:'),
+                                 textInput('email2', 'Emailadresse für Person #2:'),
                                  htmlOutput("email_status"),
                                  helpText('Wenn sie hier ihre Emailadressen eingeben, erhalten beide Teilnehmer jedes Wochenende eine Email mit den 5 Fragen.'),
                                  hr(),
