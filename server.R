@@ -421,20 +421,24 @@ shinyServer(function(input, output, session){
                         retVal <- retVal[retVal$repo == repo[['app_key']] & 
                                          retVal$task == 'email', ]
                         useVal <- data.frame()
-                        for(i in 1:nrow(retVal)){
-                                if(number == 1){
-                                        if(colnames(retVal$parameters$response_structure[[i]]$fields)[2] == 'value') {
-                                                useVal <- retVal[i,]
-                                        }
-                                } else {
-                                        if(colnames(retVal$parameters$response_structure[[i]]$fields)[2] == 'value2') {
-                                                useVal <- retVal[i,]
+                        if(nrow(retVal) > 0) {
+                                for(i in 1:nrow(retVal)){
+                                        if(number == 1){
+                                                if(colnames(retVal$parameters$response_structure[[i]]$fields)[2] == 'value') {
+                                                        useVal <- retVal[i,]
+                                                }
+                                        } else {
+                                                if(colnames(retVal$parameters$response_structure[[i]]$fields)[2] == 'value2') {
+                                                        useVal <- retVal[i,]
+                                                }
                                         }
                                 }
-                        }
-                        if(nrow(useVal) > 0) {
-                                c(id=useVal$id,
-                                  email=useVal$parameters$address)
+                                if(nrow(useVal) > 0) {
+                                        c(id=useVal$id,
+                                          email=useVal$parameters$address)
+                                } else {
+                                        vector()
+                                }
                         } else {
                                 vector()
                         }
