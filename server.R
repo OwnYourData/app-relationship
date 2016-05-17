@@ -170,12 +170,18 @@ shinyServer(function(input, output, session){
                         plotMax <- max(max(data1$dat, na.rm=TRUE),
                                        max(data2$dat, na.rm=TRUE))
                         curDaterange <- as.Date(seq(plotMin, plotMax, 'days'))
-                        curve1 <- smooth.spline(data1$dat, 
-                                                data1[[paste0(category, '1')]], 
-                                                df=20)
-                        curve2 <- smooth.spline(data2$dat, 
-                                                data2[[paste0(category, '2')]], 
-                                                df=20)
+                        # curve1 <- smooth.spline(data1$dat, 
+                        #                         data1[[paste0(category, '1')]], 
+                        #                         df=20)
+                        # curve2 <- smooth.spline(data2$dat, 
+                        #                         data2[[paste0(category, '2')]], 
+                        #                         df=20)
+                        curve1 <- data.frame(data1$dat, 
+                                             data1[paste0(category, '1')])
+                        colnames(curve1) <- c('x', 'y')
+                        curve2 <- data.frame(data2$dat, 
+                                             data2[paste0(category, '2')])
+                        colnames(curve2) <- c('x', 'y')
                         plot(curve1, col='green', lwd=5, main=title,
                              type='l', xlab='Datum', ylab='Wert', 
                              ylim=c(1,11), xaxt='n')
@@ -183,7 +189,7 @@ shinyServer(function(input, output, session){
                         
                         d <- as.integer(as.POSIXct(data[
                                 which(abs(data[paste0(category, '1')] -
-                                          data[paste0(category, '2')]) > 4.1),
+                                          data[paste0(category, '2')]) > 3),
                                 'date']))
                         delta <- 1200000
                         for(i in 1:length(d)){
