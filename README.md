@@ -1,9 +1,9 @@
 # Beziehungsstatus
-Der [OwnYourData](https://www.ownyourdata.eu) Beziehungsstatus
+Der [OwnYourData](https://www.ownyourdata.eu) Beziehungsstatus erlaubt wöchentliche Vergleiche von verschiedenen Aspekten in einer Partnerschaft.
 
 ## Installation
 
-Die App kann gratis über den offiziellen [OwnYourData SAM](http://oyd-sam.herokuapp.com) (Store for Algorithms) installiert werden. Klicke dazu in der PIA App-Liste "Plugin installieren" und wähle "Beziehungs-Status" (ID: eu.ownyourdata.relationship) aus.
+Die App kann gratis über den offiziellen [OwnYourData SAM](http://oyd-sam.herokuapp.com) (Store for Algorithms) installiert werden. Klicke dazu in der PIA App-Liste "Plugin installieren" und wähle "Beziehungsstatus" (ID: eu.ownyourdata.relationship) aus.
 
 Die Beziehungsstatus-App benötigt das Shiny-Host-Service (ebenfalls verfügbar am OwnYourData SAM, ID: eu.ownyourdata.shinyhost) und [Docker](https://www.docker.com/) installiert.
 
@@ -12,11 +12,15 @@ Die Beziehungsstatus-App benötigt das Shiny-Host-Service (ebenfalls verfügbar 
 
 Die App umfasst folgende Funktionen:
 
-* tägliche Datenerfassung
+* Datenerfassung für folgende 5 Aspekte
+    * Energie: Wie aktiv hast du die letzte Woche erlebt?
+    * Gesundheit: Wie gesund hast du dich in der letzten Woche gefühlt?
+    * Zufriedenheit: Wie zufrieden warst du mit den Vorkommnissen in der letzten Woche?
+    * Entspannung: Hattest du Stress oder war es eine ruhige letzte Woche?
+    * Allgemein: Wie bewertest du die letzte Woche alles in allem?
 * Visualisierung der vorhandenen Daten zur Identifikation von Zusammenhängen
 * Einschränkung der Darstellung auf ein bestimmtes Zeitfenster
-* optional: automatisierte Datensammlung
-* optional: wöchentliche Emails die eigenes Befinden und Medikamenteneinnahme abfragen
+* optional: automatisierte wöchentliche Emails zur Abfrage der 5 beschriebenen Aspekte
 
 
 ## Für Entwickler  
