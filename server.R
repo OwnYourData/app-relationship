@@ -1,3 +1,4 @@
+# OYD: Beziehungsmonitor  - last update:2016-05-20
 # Manifest for relationship app ===================================
 '
 encode with https://www.base64encode.org/
@@ -59,9 +60,11 @@ repo_general <- paste0(repo_relshp, '.general')
 
 # Shiny Server ============================================
 shinyServer(function(input, output, session){
-
+        output$upgradeLink <- renderText({
+                renderUpgrade(session)
+        })
+        
 # relationship specific functions =================================
-
         relshpRepo <- reactive({
                 url <- input$relshp_url
                 app_key <- input$relshp_app_key
@@ -214,8 +217,7 @@ shinyServer(function(input, output, session){
 
         plotData <- function(category){
                 if(first) {
-                        createAlert(session, 'topAlert', style='danger', title='Sie befinden sich auf einer unsicheren Webseite!',
-                                    content="Die auf dieser Webseite eingegebenen und hochgeladenden Daten können möglicherweise durch Unberechtigte mitgelesen werden - <a href='https://www.ownyourdata.eu/laendervergleich-datenschutz/'>weitere Infos</a>.<br><strong>Lösung:</strong> <a href='https://www.ownyourdata.eu/apps/kontodaten-visualisierung-app/'>Installieren</a> sie die <em>Kontoauszüge App</em> an einem sicheren Ort ihrer Wahl!", append=FALSE)
+                        internetAlert(session, 'https://www.ownyourdata.eu/apps/')
                         first <<- FALSE                  
                 }
                 closeAlert(session, 'noDataAlert')
