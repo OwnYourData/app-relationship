@@ -1,8 +1,0 @@
-{
-  "name": "Beziehungsstatus",
-  "description": "Vergleiche wöchentlich verschiedene Aspekte mit deinem Partner",
-  "repository": "https://github.com/OwnYourData/app-relationship",
-  "keywords": ["ownyourdata", "partnerschaft", "stimmung"],
-  "website": "https://www.ownyourdata.eu",
-  "buildpacks": [{ "url": "http://github.com/virtualstaticvoid/heroku-buildpack-r" }]
-}
