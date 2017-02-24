@@ -3,9 +3,9 @@ MAINTAINER "Christoph Fabianek" christoph@ownyourdata.eu
 
 RUN cd /srv/shiny-server \
         && rm -rf * \
-        && git clone https://github.com/OwnYourData/app-template.git \ 
-        && mv app-template/* . \
-        && rm -r app-template \
+        && git clone https://github.com/OwnYourData/app-relationship.git \ 
+        && mv app-relationship/* . \
+        && rm -r app-relationship \
         && R -e "source('init.r')"
 
 EXPOSE 3838

@@ -1,14 +1,14 @@
 #!/bin/bash
 
-APP="app-template"
-APP_NAME="template"
+APP="app-relationship_armhf"
+APP_GIT="app-relationship"
+APP_NAME="beziehungstracker"
 
 # read commandline options
 REFRESH=false
 BUILD_CLEAN=false
 DOCKER_UPDATE=false
 RUN_LOCAL=false
-VAULT_UPDATE=false
 while [ $# -gt 0 ]; do
     case "$1" in
         --clean*)
@@ -22,9 +22,6 @@ while [ $# -gt 0 ]; do
             ;;
         --run*)
             RUN_LOCAL=true
-            ;;
-        --vault*)
-            VAULT_UPDATE=true
             ;;
         *)
             printf "unbekannte Option(en)\n"
@@ -41,7 +38,7 @@ if $REFRESH; then
     if [ "${BASH_SOURCE[0]}" != "${0}" ]; then
         cd ~/docker
         rm -rf $APP
-        svn checkout https://github.com/OwnYourData/$APP/trunk/docker/$APP
+        svn checkout https://github.com/OwnYourData/$APP_GIT/trunk/docker/$APP
         echo "refreshed"
         cd ~/docker/$APP
         return
@@ -59,12 +56,6 @@ fi
 
 if $DOCKER_UPDATE; then
     docker push oydeu/$APP
-fi
-
-if $VAULT_UPDATE; then
-    docker stop $APP_NAME
-    docker rm $(docker ps -q -f status=exited)
-    docker run --name $APP_NAME -d --expose 3838 -e VIRTUAL_HOST=$APP_NAME.datentresor.org -e VIRTUAL_PORT=3838 oydeu/$APP
 fi
 
 if $RUN_LOCAL; then
