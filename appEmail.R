@@ -61,12 +61,12 @@ writeRelationshipEmail <- function(email, person){
                         app,
                         appTitle,
                         email,
-                        'Wie geht es dir - Beziehungsmonitor',
+                        'Wie geht es dir - Beziehungstracker',
                         relationshipEmailText,
                         '0 8 * * *',
                         response_structure)
         } else {
-                setAllergyEmailStatus('Fehler: ungültige Emailadresse, die Eingabe wurde nicht gespeichert')
+                setRelationshipEmailStatus('Fehler: ungültige Emailadresse, die Eingabe wurde nicht gespeichert')
         }
 }
 
@@ -82,6 +82,7 @@ observeEvent(input$saveRelationEmail, {
         }
         retVal <- writeRelationshipEmail(input$email1, '1')
         retVal <- writeRelationshipEmail(input$email2, '2')
+        setRelationshipEmailStatus('wöchentliche Emails werden an die angegenen Adressen versandt')
 })
 
 observeEvent(input$cancelRelationEmail, {

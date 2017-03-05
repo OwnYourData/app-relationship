@@ -3,7 +3,7 @@
 
 # Comments ================================================
 # - run locally
-#   runApp('~/cs/ownyourdata/apps/relationship2', host='0.0.0.0', port=1241)
+#   runApp('~/oyd/relationship', host='0.0.0.0', port=1241)
 # - copy files to Github
 #   cp -r *.R *.r *.txt www docker github/app-relationship; cd github/app-relationship;
 

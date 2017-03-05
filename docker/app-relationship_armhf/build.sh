@@ -2,7 +2,7 @@
 
 APP="app-relationship_armhf"
 APP_GIT="app-relationship"
-APP_NAME="beziehungstracker"
+APP_NAME="beziehungsmonitor"
 
 # read commandline options
 REFRESH=false

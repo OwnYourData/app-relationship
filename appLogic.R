@@ -29,14 +29,19 @@ repoData <- function(repo){
 # anything that should run only once during startup
 appStart <- function(){
         app <- currApp()
-        schedulerEmail <- getPiaSchedulerEmail(app)
-        if(length(schedulerEmail) == 0) {
-                setRelationshipEmailStatus('Status: derzeit sind wöchentliche Emails nicht eingerichtet')
-                updateTextInput(session, 'email1', value='')
-                updateTextInput(session, 'email2', value='')
-        } else {
-                updateTextInput(session, 'email1', 
-                                value='')
-                setRelationshipEmailStatus('Status: wöchentliche Emails werden an die beiden angegebene Adresse versandt')
+        if(length(app) > 0){
+                url <- itemsUrl(app[['url']], schedulerKey)
+                retVal <- readItems(app, url)
+                retVal <- retVal[retVal$app == app[['app_key']] &
+                                         retVal$task == 'email', ]
+                if(length(retVal) == 0) {
+                        setRelationshipEmailStatus('Status: derzeit sind wöchentliche Emails nicht eingerichtet')
+                        updateTextInput(session, 'email1', value='')
+                        updateTextInput(session, 'email2', value='')
+                } else {
+                        updateTextInput(session, 'email1', value=retVal$parameters[[2]]$address)
+                        updateTextInput(session, 'email2', value=retVal$parameters[[1]]$address)
+                        setRelationshipEmailStatus('Status: wöchentliche Emails werden an die beiden angegebene Adresse versandt')
+                }
         }
 }
