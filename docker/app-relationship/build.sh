@@ -1,7 +1,7 @@
 #!/bin/bash
 
 APP="app-relationship"
-APP_NAME="beziehungsmonitor"
+APP_NAME="beziehungstracker"
 
 # read commandline options
 REFRESH=false
