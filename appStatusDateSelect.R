@@ -26,6 +26,16 @@ appStatusDateSelect <- function(){
                                                'individuell'='7'),
                                    selected = 4
                        )
+                ),
+                column(4,
+                       selectInput('topicSelect',
+                                   label = 'Bereich',
+                                   choices = c('Energie'='energy',
+                                               'Gesundheit'='health',
+                                               'Zufriedenheit'='satisfaction',
+                                               'Entspannung'='relax',
+                                               'Gesamt'='general'),
+                                   selected = 'energy')
                 )
         )
 }

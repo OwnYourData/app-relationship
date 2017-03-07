@@ -63,7 +63,7 @@ writeRelationshipEmail <- function(email, person){
                         email,
                         'Wie geht es dir - Beziehungstracker',
                         relationshipEmailText,
-                        '0 8 * * *',
+                        '0 8 * * 0',
                         response_structure)
         } else {
                 setRelationshipEmailStatus('Fehler: ungültige Emailadresse, die Eingabe wurde nicht gespeichert')
