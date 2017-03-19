@@ -8,6 +8,23 @@ setRelationshipEmailStatus <- function(msg){
 writeRelationshipEmail <- function(email, person){
         if(validEmail(email)){
                 app <- currApp()
+                mobile_url <- paste0(
+                        mobileUrl, 
+                        '?PIA_URL=', piaUrl,
+                        '&APP_KEY=', appKey,
+                        '&APP_SECRET=', appSecret)
+                relationshipEmailText <- paste0(
+                        'Bewerte folgende Aspekte für die letzten 7 Tage und verwende dabei ',
+                        'jeweils eine Skala von 1 (sehr gut) bis 6 (sehr schlecht):',
+                        '<ul><li>Energie</li><li>Gesundheit</li><li>Zufrieden sein</li>',
+                        '<li>Entspannung</li><li>Gesamt</li></ul>',
+                        '<p>Antworte auf dieses Mail und schreibe in jede Zeile den ',
+                        'jeweiligen Wert (1. Zeile: Energie, 2. Zeile: Gesundheit, usw.). ',
+                        'Optional kannst du in der 6. Zeile noch einen Freitext zu deiner ',
+                        'Beziehung in der letzten Woche eingeben.</p>',
+                        '<p>Ebenfalls hast du die Möglichkeit diese <a href="',
+                        mobile_url,
+                        '">Daten in der Handy-App des Beziehungstrackers zu erfassen</a>.')
                 energy_fields <- list(
                         date='Date.now',
                         value='line_1(Integer)')
