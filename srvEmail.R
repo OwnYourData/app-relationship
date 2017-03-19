@@ -2,52 +2,54 @@
 # last update: 2017-02-06
 
 writeSchedulerEmail <- function(app, app_name, email, subject, content, time, response_structure, id){
-        port <- as.character(session$clientData$url_port)
-        app_url <- paste0(session$clientData$url_protocol, '//',
-                          session$clientData$url_hostname)
-        if(port != '80'){
-                app_url <- paste0(app_url, ':', port)
-        }
-        if(missing(response_structure)) {
-                parameters <- list(address = email,
-                                   appName = app_name,
-                                   subject = subject,
-                                   content = content,
-                                   appUrl  = app_url,
-                                   pia_url  = app[['url']],
-                                   encrypt = 'false')
-                config <- list(app            = app[['app_key']],
-                               time           = time,
-                               task           = 'email',
-                               parameters     = parameters,
-                               '_oydRepoName' = 'Scheduler')
-        } else {
-                parameters <- list(address            = email,
-                                   appName            = app_name,
-                                   subject            = subject,
-                                   content            = content,
-                                   appUrl             = app_url,
-                                   response_structure = response_structure,
-                                   pia_url           = app[['url']],
-                                   app_key           = app[['app_key']],
-                                   app_secret        = app[['app_secret']],
-                                   encrypt            = 'false')
-                config <- list(app            = app[['app_key']],
-                               time           = time,
-                               task           = 'email',
-                               email_response = TRUE,
-                               parameters     = parameters,
-                               '_oydRepoName' = 'Scheduler')
-        }
-        if(missing(id)) {
-                writeItem(app,
-                          itemsUrl(app[['url']], schedulerKey),
-                          config)
-        } else {
-                updateItem(app, 
-                           itemsUrl(app[['url']], schedulerKey), 
-                           config,
-                           id)
+        if(length(app) > 0){
+                port <- as.character(session$clientData$url_port)
+                app_url <- paste0(session$clientData$url_protocol, '//',
+                                  session$clientData$url_hostname)
+                if(port != '80'){
+                        app_url <- paste0(app_url, ':', port)
+                }
+                if(missing(response_structure)) {
+                        parameters <- list(address = email,
+                                           appName = app_name,
+                                           subject = subject,
+                                           content = content,
+                                           appUrl  = app_url,
+                                           pia_url  = app[['url']],
+                                           encrypt = 'false')
+                        config <- list(app            = app[['app_key']],
+                                       time           = time,
+                                       task           = 'email',
+                                       parameters     = parameters,
+                                       '_oydRepoName' = 'Scheduler')
+                } else {
+                        parameters <- list(address            = email,
+                                           appName            = app_name,
+                                           subject            = subject,
+                                           content            = content,
+                                           appUrl             = app_url,
+                                           response_structure = response_structure,
+                                           pia_url           = app[['url']],
+                                           app_key           = app[['app_key']],
+                                           app_secret        = app[['app_secret']],
+                                           encrypt            = 'false')
+                        config <- list(app            = app[['app_key']],
+                                       time           = time,
+                                       task           = 'email',
+                                       email_response = TRUE,
+                                       parameters     = parameters,
+                                       '_oydRepoName' = 'Scheduler')
+                }
+                if(missing(id)) {
+                        writeItem(app,
+                                  itemsUrl(app[['url']], schedulerKey),
+                                  config)
+                } else {
+                        updateItem(app, 
+                                   itemsUrl(app[['url']], schedulerKey), 
+                                   config,
+                                   id)
+                }
         }
 }
 

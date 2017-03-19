@@ -40,7 +40,6 @@ appStart <- function(){
                         updateTextInput(session, 'email1', value='')
                         updateTextInput(session, 'email2', value='')
                 } else {
-                        save(retVal, file='tmpRetVal.RData')
                         updateTextInput(session, 'email1', value=retVal$parameters[[2]]$address)
                         updateTextInput(session, 'email2', value=retVal$parameters[[1]]$address)
                         setRelationshipEmailStatus('Status: wöchentliche Emails werden an die beiden angegebene Adresse versandt')

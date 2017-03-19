@@ -7,7 +7,7 @@ uiMenu <- function(){
                              appName,
                              "/blob/master/README.md\">Dokumentation</a></li>",
                              "<li><a href=\"javascript:void(0);\" onclick=\"$('#startConfig').modal('show');\">Konfiguration</a></li>",
-                             "<li><a href='", mobileUrl, "'>zur mobilen Version")),
+                             "<li><a id='mobile_url' href='", mobileUrl, "'>zur mobilen Version")),
                  fluidRow(
                          column(1),
                          column(10,
