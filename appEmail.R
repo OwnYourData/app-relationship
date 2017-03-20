@@ -5,16 +5,51 @@ setRelationshipEmailStatus <- function(msg){
         output$relationEmailStatus <- renderUI(msg)
 }
 
-writeRelationshipEmail <- function(email, person){
+writeRelationshipEmail <- function(person_name, email, person){
+        app <- currApp()
+        if(nchar(person_name) > 0){
+                url <- itemsUrl(app[['url']],
+                                'eu.ownyourdata.relationship.config')
+                rel_config <- readItems(app, url)
+                if(nrow(rel_config) > 1){
+                        deleteRepo(app, url)
+                        rel_config <- data.frame()
+                }
+                if(nrow(rel_config) == 1){
+                        name1 <- rel_config$name1
+                        name2 <- rel_config$name2
+                        if(person == 1){
+                                name1 <- person_name
+                        } else {
+                                name2 <- person_name
+                        }
+                        data <- list(
+                                name1 = name1,
+                                name2 = name2)
+                        updateItem(app, url, data, rel_config$id)
+                } else {
+                        name1 <- ''
+                        name2 <- ''
+                        if(person == 1){
+                                name1 <- person_name
+                        } else {
+                                name2 <- person_name
+                        }
+                        data <- list(
+                                name1 = name1,
+                                name2 = name2,
+                                '_oydRepoName' = 'Konfiguration')
+                        updateItem(app, url, data, rel_config$id)
+                }
+        }
         if(validEmail(email)){
-                app <- currApp()
                 mobile_url <- paste0(
                         mobileUrl, 
                         '?PIA_URL=', piaUrl,
                         '&APP_KEY=', appKey,
                         '&APP_SECRET=', appSecret)
-                relationshipEmailText <- paste0(
-                        'Bewerte folgende Aspekte für die letzten 7 Tage und verwende dabei ',
+                relationshipEmailText <- paste0(person_name, 
+                        ', bewerte folgende Aspekte für die letzten 7 Tage und verwende dabei ',
                         'jeweils eine Skala von 1 (sehr gut) bis 6 (sehr schlecht):',
                         '<ul><li>Energie</li><li>Gesundheit</li><li>Zufrieden sein</li>',
                         '<li>Entspannung</li><li>Gesamt</li></ul>',
@@ -83,7 +118,7 @@ writeRelationshipEmail <- function(email, person){
                         '0 8 * * 0',
                         response_structure)
         } else {
-                setRelationshipEmailStatus('Fehler: ungültige Emailadresse, die Eingabe wurde nicht gespeichert')
+                setRelationshipEmailStatus('Emailversand wurde nicht eingerichtet')
         }
 }
 
@@ -97,8 +132,8 @@ observeEvent(input$saveRelationEmail, {
                                               url,
                                               as.character(x)))
         }
-        retVal <- writeRelationshipEmail(input$email1, '1')
-        retVal <- writeRelationshipEmail(input$email2, '2')
+        retVal <- writeRelationshipEmail(input$name1, input$email1, '1')
+        retVal <- writeRelationshipEmail(input$name2, input$email2, '2')
         setRelationshipEmailStatus('wöchentliche Emails werden an die angegenen Adressen versandt')
 })
 

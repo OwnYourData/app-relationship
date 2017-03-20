@@ -30,6 +30,30 @@ repoData <- function(repo){
 appStart <- function(){
         app <- currApp()
         if(length(app) > 0){
+                url <- itemsUrl(app[['url']], 
+                                'eu.ownyourdata.relationship.config')
+                retVal <- readItems(app, url)
+                if(nrow(retVal) > 1){
+                        deleteRepo(app, url)
+                        retVal <- data.frame()
+                }
+                if(nrow(retVal) == 1){
+                        updateTextInput(session, 'name1', value=retVal$name1)
+                        updateTextInput(session, 'name2', value=retVal$name2)
+                        
+                        name1 <- "Person #1"
+                        name2 <- "Person #2"
+                        if(nchar(retVal$name1) > 0){
+                                name1 <- retVal$name1
+                        }
+                        if(nchar(retVal$name2) > 0){
+                                name2 <- retVal$name2
+                        }
+                        updateSelectInput(session, 'personSelect',
+                                          choices = c(name1, name2))
+                        
+                }
+                
                 url <- itemsUrl(app[['url']], schedulerKey)
                 retVal <- readItems(app, url)
                 retVal <- retVal[retVal$app == app[['app_key']] &
@@ -40,9 +64,11 @@ appStart <- function(){
                         updateTextInput(session, 'email1', value='')
                         updateTextInput(session, 'email2', value='')
                 } else {
-                        updateTextInput(session, 'email1', value=retVal$parameters[[2]]$address)
-                        updateTextInput(session, 'email2', value=retVal$parameters[[1]]$address)
-                        setRelationshipEmailStatus('Status: wöchentliche Emails werden an die beiden angegebene Adresse versandt')
+                        updateTextInput(session, 'email1', value=retVal$parameters[[1]]$address)
+                        if(length(retVal$parameters) > 1){
+                                updateTextInput(session, 'email2', value=retVal$parameters[[2]]$address)
+                        }
+                        setRelationshipEmailStatus('Status: wöchentliche Emails werden an die angegebenen Adresse versandt')
                 }
         }
 }
@@ -168,41 +194,61 @@ output$relationGraph <- renderPlotly({
                 data2$value <- as.numeric(data2$value)
                 data2 <- data2[!is.na(data2$value), ]
         }
-
+        name1 <- "Person #1"
+        name2 <- "Person #2"
+        nameData <- repoData(paste0(appKey, '.config'))
+        if(nrow(nameData) == 1){
+                storedName1 <- as.character(nameData$name1)
+                storedName2 <- as.character(nameData$name2)
+                if(nchar(storedName1) > 0){
+                        name1 <- storedName1
+                }
+                if(nchar(storedName2) > 0){
+                        name2 <- storedName2
+                }
+        }
+        
         pdf(NULL)
         outputPlot <- plotly_empty()
         if((nrow(data1) > 0) |
            (nrow(data2) > 0)){
-                outputPlot <- plot_ly() %>%
-                        add_lines(x = as.Date(data1$date),
-                                  y = data1$value,
-                                  line = list(
-                                          color = 'blue',
-                                          width = 2,
-                                          shape = 'spline'),
-                                  name = 'Person #1') %>%
-                        add_markers(x = as.Date(data1$date),
-                                    y = data1$value,
-                                    marker = list(
-                                            color='blue',
-                                            size = data1$marker_size),
-                                    text = data1$note,
-                                    name = '', 
-                                    showlegend = FALSE) %>%
-                        add_lines(x = as.Date(data2$date),
-                                  y = data2$value,
-                                  line = list(
-                                          color = 'orange',
-                                          width = 2,
-                                          shape = 'spline'),
-                                  name = 'Person #2') %>%
-                        add_markers(x = as.Date(data2$date),
-                                    y = data2$value,
-                                    marker = list(
-                                            color='orange',
-                                            size = data2$marker_size),
-                                    name = '', 
-                                    showlegend = FALSE) %>%
+                outputPlot <- plot_ly() 
+                if(nrow(data1) > 0){
+                        outputPlot <- outputPlot %>%
+                                add_lines(x = as.Date(data1$date),
+                                          y = data1$value,
+                                          line = list(
+                                                  color = 'blue',
+                                                  width = 2,
+                                                  shape = 'spline'),
+                                          name = name1) %>%
+                                add_markers(x = as.Date(data1$date),
+                                            y = data1$value,
+                                            marker = list(
+                                                    color='blue',
+                                                    size = data1$marker_size),
+                                            text = data1$note,
+                                            name = '', 
+                                            showlegend = FALSE)
+                }
+                if(nrow(data2) > 0){
+                        outputPlot <- outputPlot %>%
+                                add_lines(x = as.Date(data2$date),
+                                          y = data2$value,
+                                          line = list(
+                                                  color = 'orange',
+                                                  width = 2,
+                                                  shape = 'spline'),
+                                          name = name2) %>%
+                                add_markers(x = as.Date(data2$date),
+                                            y = data2$value,
+                                            marker = list(
+                                                    color='orange',
+                                                    size = data2$marker_size),
+                                            name = '', 
+                                            showlegend = FALSE)
+                }
+                outputPlot <- outputPlot %>%
                         layout( xaxis = list(type = 'date',
                                              tickformat = '%Y-%m-%d'),
                                 yaxis = list(range = c(0.5, 6.5),
