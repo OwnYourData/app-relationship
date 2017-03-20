@@ -49,8 +49,10 @@ appStart <- function(){
                         if(nchar(retVal$name2) > 0){
                                 name2 <- retVal$name2
                         }
+                        myChoices <- c(1,2)
+                        names(myChoices) <- c(name1, name2)
                         updateSelectInput(session, 'personSelect',
-                                          choices = c(name1, name2))
+                                          choices = myChoices)
                         
                 }
                 
