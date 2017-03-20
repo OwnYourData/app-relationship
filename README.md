@@ -1,36 +1,82 @@
-# Beziehungsstatus
-Der [OwnYourData](https://www.ownyourdata.eu) Beziehungsstatus erlaubt wöchentliche Vergleiche von verschiedenen Aspekten in einer Partnerschaft.
+# <img src="https://github.com/OwnYourData/app-relationship/raw/master/www/app_logo.png" width="92"> Allergie-Tagebuch
+
+In einer Beziehung ist es spannend wie es beiden Partnern geht. Insbesondere äußere Einflüsse können oft eine große Wirkung haben, ohne dass der oder die andere weiß welche Bedeutung das auf die Beziehung hat. Mit dem Beziehungstracker protokollieren Partner ihr Befinden in unterschiedlichen Bereichen und vergleichen wöchentlich wie es ihnen geht. Geringe Werte und große Diskrepanzen deuten auf Spannungen hin!
+
+Mehr Infos, Screenshots und Demo: https://www.ownyourdata.eu/apps/beziehungstracker
+
+### Dein Datentresor
+Der Beziehungstracker wird in einem sicheren Datentresor installiert. Üblicherweise musst du deine Daten an die Betreiber von Webservices und Apps weitergeben, um diese nutzen zu können. OwnYourData dreht den Spieß jedoch um: Du behältst all deine Daten und du verwahrst sie in deinem eigenen Datentresor. Apps (Datensammlung, Algorithmen und Visualisierung) holst du zu dir, in den Datentresor hinein.
+
+Mehr Infos und Demo: https://www.ownyourdata.eu  
+Hintergrund-Infos für Entwickler: https://www.ownyourdata.eu/developer/
 
 ## Installation
 
-Die App kann gratis über den offiziellen [OwnYourData SAM](http://oyd-sam.herokuapp.com) (Store for Algorithms) installiert werden. Klicke dazu in der PIA App-Liste "Plugin installieren" und wähle "Beziehungsstatus" (ID: eu.ownyourdata.relationship) aus.
+Du kannst entscheiden wo du deinen Datentresor einrichten und deine Apps installieren möchtest: auf deinem persönlichen OwnYourData-Server, auf einem anderen Cloud-Dienst deiner Wahl, auf deinem eigenen Computer oder auf einem Raspberry Pi bei Dir daheim.
 
-Die Beziehungsstatus-App benötigt das Shiny-Host-Service (ebenfalls verfügbar am OwnYourData SAM, ID: eu.ownyourdata.shinyhost) und [Docker](https://www.docker.com/) installiert.
+### Installation am OwnYourData-Server
+
+Diese Installation ist am einfachsten: Fordere deinen Datentresor an: https://www.ownyourdata.eu, öffne den Datentresor und klicke im *OwnYourData App Store* beim Beziehungstracker auf "Install".
+
+### Installation bei Cloud Diensten
+
+Verschiedene Cloud Dienste bieten das Hosting von [Docker](https://www.docker.com) Containern an, z.B. https://sloppy.io oder https://elastx.se. Das Allergie-Tagebuch steht als Docker-Image unter dem Namen `oydeu/app-allergy` auf Dockerhub hier zur Verfügung: https://hub.docker.com/r/oydeu/app-relationship/. (Da das Allergie-Tagebuch auch in einer Variante für Smartphones zur Verfügung steht, soll auch das Image `oydeu/app-relationship_mobile` verwendet werden.)  
+Starte den Container und verbinde Dich im Konfigurations-Dialog mit deinem Datentresor.
+
+### Installation am eigenen Computer/Laptop
+
+Um das Allergie-Tagebuch am eigenen Computer auszuführen, musst du zuerst [eine aktuelle Version von Docker installieren](https://www.docker.com/community-edition#/download). Starte dann das Allergie-Tagebuch mit folgendem Befehl:  
+`docker run -p 3838:3838 oydeu/app-relationship`  
+Du kannst dann auf den Beziehungstracker mit deinem Browser unter folgender Adresse zugreifen:  
+`http://192.168.99.100:3838`  
+  
+*Anmerkungen:*  
+* wenn du mehrere Apps verwendest, musst du unterschiedliche Ports verwenden  
+  `docker run -p 1234:3838 oydeu/app-relationship` und `http://192.168.99.100:1234`
+* Docker vergibt die IP-Adresse auf deinem Computer unter der du auf die Container zugreifen kannst. Verwende folgenden Befehl, um die tatsächliche IP-Adresse festzustellen: `docker-machine ip`  
+* in diesem Blog-Artikel wird ausführlich die Installation einer App am eigenen PC beschrieben: [Ein Container voller Daten](https://www.ownyourdata.eu/2016/09/26/ein-container-voller-daten/)
+
+### Installation am Raspberry Pi
+
+Das Allergie-Tagebuch steht auch für die Architektur armhf zur Verfügung. Die Installation erfolgt dann wie am Computer/Laptop jedoch unter Verwendung des Docker Image `oydeu/app-allergy_armhf`.  
+  
+*Anmerkungen:*  
+* Allergie-Tagebuch am Dockerhub: https://hub.docker.com/r/oydeu/app-allergy_armhf/  
+* zur einfachen Installation von Docker am Raspberry empfehlen wir die SD-Card Images von Hypriot: http://blog.hypriot.com/downloads/
+* Befehl zum Start des Containers am Raspberry: `docker run -p 3838:3838 oydeu/app-allergy_armhf`
+
+## Datenstruktur
+
+Die folgenden Listen werden vom Allergie-Tagebuch verwendet:
+
+* Befinden    
+    - `date`: Datum im Format YYYY-MM-DD    
+    - `value`: Skalierung des Befindens von 1-sehr gut bis 6-sehr schlecht    
+* Medikamenteneinnahme    
+    - `date`: Datum im Format YYYY-MM-DD    p#sub-feature {
+    margin-left: 47px;
+}
+    - `value`: Logisches Feld mit den Werten `true` oder `false`    
+* Tagebuch    
+    - `date`: Datum im Format YYYY-MM-DD    
+    - `value`: Text    
+* [Pollenbelastung]    
+    - `timestamp`: Zeistempel in Millisekunden seit 1.1.1970 UTC    
+    - `pollType`: Pollen Typ in der Schreibweise wie von https://polleninfo.org verwendet    
+    - `value`: Pollenbelastung in der Skalierung von 0-keine Belastung bis 4-sehr starke Belastung    
+* Allergie-Skript - R Skript zum Import der Pollenbelastung der im Scheduler konfigurierten Orte    
+    - `name`: eindeutiger Name    
+    - `script`: base64 enkodiertes R Skript    
+* Konfiguration und Konfiguration (Mobil) - gespeicherte Filterauswahl für Visualisierung  
+* Scheduler, Scheduler Verlauf und Scheduler Status  - siehe [service-scheduler](https://github.com/OwnYourData/service-scheduler)  
+* Info - Informationen zum Datentresor
 
 
-## Verwendung
+## Verbessere den Beziehungstracker
 
-Die App umfasst folgende Funktionen:
+Bitte melde Fehler oder Vorschläge für neue Features / UX-Verbesserungen im [GitHub Issue-Tracker](https://github.com/OwnYourData/app-relationship/issues) und halte dich dabei an die [Contributor Guidelines](https://github.com/twbs/ratchet/blob/master/CONTRIBUTING.md).
 
-* Datenerfassung für folgende 5 Aspekte
-    * Energie: Wie aktiv hast du die letzte Woche erlebt?
-    * Gesundheit: Wie gesund hast du dich in der letzten Woche gefühlt?
-    * Zufriedenheit: Wie zufrieden warst du mit den Vorkommnissen in der letzten Woche?
-    * Entspannung: Hattest du Stress oder war es eine ruhige letzte Woche?
-    * Allgemein: Wie bewertest du die letzte Woche alles in allem?
-* Visualisierung der vorhandenen Daten zur Identifikation von Zusammenhängen
-* Einschränkung der Darstellung auf ein bestimmtes Zeitfenster
-* optional: automatisierte wöchentliche Emails zur Abfrage der 5 beschriebenen Aspekte
-
-
-## Für Entwickler  
-
-Diese App wurde in [R](https://cran.r-project.org/) entwickelt und verwendet [Shiny](http://shiny.rstudio.com/). Zur Ausführung wird entweder das OwnYourData Shiny Service benötigt (siehe oben: Installation) oder es existiert ein bereits [installierter Shiny Server](https://github.com/rstudio/shiny-server/wiki/Building-Shiny-Server-from-Source). Wird ein eigener Shiny Server betrieben, kann in der PIA App-Liste mit "Register a new Plugin" das Manifest base64-encodiert hinzugefügt werden (angegeben am Beginn der Datei `server.R`) und in der App unter Konfiguration müssen die Parameter URL, App-Key und App-Secret selbst gesetzt werden.  
-Zum Ausprobieren kann die App auf [Heroku](https://www.heroku.com/) deployed werden:  
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-
-## Verbessere die Beziehungsstatus-App
+Wenn du selbst an der App mitentwickeln möchtest, folge diesen Schritten:
 
 1. Fork it!
 2. erstelle einen Feature Branch: `git checkout -b my-new-feature`
@@ -40,4 +86,4 @@ Zum Ausprobieren kann die App auf [Heroku](https://www.heroku.com/) deployed wer
 
 ## Lizenz
 
-MIT Lizenz 2016 - Own Your Data
+[MIT Lizenz 2017 - OwnYourData.eu](https://raw.githubusercontent.com/OwnYourData/app-relationship/master/LICENSE)
