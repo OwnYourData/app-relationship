@@ -9,6 +9,8 @@ Der Beziehungstracker wird in einem sicheren Datentresor installiert. Üblicherw
 Mehr Infos und Demo: https://www.ownyourdata.eu  
 Hintergrund-Infos für Entwickler: https://www.ownyourdata.eu/developer/
 
+&nbsp;    
+
 ## Installation
 
 Du kannst entscheiden wo du deinen Datentresor einrichten und deine Apps installieren möchtest: auf deinem persönlichen OwnYourData-Server, auf einem anderen Cloud-Dienst deiner Wahl, auf deinem eigenen Computer oder auf einem Raspberry Pi bei Dir daheim.
@@ -44,6 +46,8 @@ Der Beziehungstracker steht auch für die Architektur armhf zur Verfügung. Die 
 * zur einfachen Installation von Docker am Raspberry empfehlen wir die SD-Card Images von Hypriot: http://blog.hypriot.com/downloads/
 * Befehl zum Start des Containers am Raspberry: `docker run -p 3838:3838 oydeu/app-relationship_armhf`
 
+&nbsp;    
+
 ## Datenstruktur
 
 Die folgenden Listen werden vom Beziehungstracker verwendet:
@@ -72,6 +76,7 @@ Die folgenden Listen werden vom Beziehungstracker verwendet:
 * Scheduler, Scheduler Verlauf und Scheduler Status  - siehe [service-scheduler](https://github.com/OwnYourData/service-scheduler)  
 * Info - Informationen zum Datentresor
 
+&nbsp;    
 
 ## Verbessere den Beziehungstracker
 
@@ -84,6 +89,8 @@ Wenn du selbst an der App mitentwickeln möchtest, folge diesen Schritten:
 3. Commit deine Änderungen: `git commit -am 'Add some feature'`
 4. Push in den Branch: `git push origin my-new-feature`
 5. Sende einen Pull Request
+
+&nbsp;    
 
 ## Lizenz
 
