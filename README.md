@@ -1,6 +1,5 @@
-# <img src="https://github.com/OwnYourData/app-relationship/raw/master/www/app_logo.png" width="92"> Allergie-Tagebuch
-
-In einer Beziehung ist es spannend wie es beiden Partnern geht. Insbesondere äußere Einflüsse können oft eine große Wirkung haben, ohne dass der oder die andere weiß welche Bedeutung das auf die Beziehung hat. Mit dem Beziehungstracker protokollieren Partner ihr Befinden in unterschiedlichen Bereichen und vergleichen wöchentlich wie es ihnen geht. Geringe Werte und große Diskrepanzen deuten auf Spannungen hin!
+# <img src="https://github.com/OwnYourData/app-relationship/raw/master/www/app_logo.png" width="92"> Beziehungstracker
+In einer Beziehung ist es spannend wie es beiden Partnern geht. Insbesondere äußere Einflüsse können oft eine große Wirkung haben, ohne dass der oder die Andere weiß welche Bedeutung das auf die Beziehung hat. Mit dem Beziehungstracker protokollieren Partner ihr Befinden in unterschiedlichen Bereichen und vergleichen wöchentlich wie es ihnen geht. Geringe Werte und große Diskrepanzen deuten auf Spannungen hin!
 
 Mehr Infos, Screenshots und Demo: https://www.ownyourdata.eu/apps/beziehungstracker
 
@@ -20,12 +19,12 @@ Diese Installation ist am einfachsten: Fordere deinen Datentresor an: https://ww
 
 ### Installation bei Cloud Diensten
 
-Verschiedene Cloud Dienste bieten das Hosting von [Docker](https://www.docker.com) Containern an, z.B. https://sloppy.io oder https://elastx.se. Das Allergie-Tagebuch steht als Docker-Image unter dem Namen `oydeu/app-allergy` auf Dockerhub hier zur Verfügung: https://hub.docker.com/r/oydeu/app-relationship/. (Da das Allergie-Tagebuch auch in einer Variante für Smartphones zur Verfügung steht, soll auch das Image `oydeu/app-relationship_mobile` verwendet werden.)  
+Verschiedene Cloud Dienste bieten das Hosting von [Docker](https://www.docker.com) Containern an, z.B. https://sloppy.io oder https://elastx.se. Der Beziehungstracker steht als Docker-Image unter dem Namen `oydeu/app-relationship` auf Dockerhub hier zur Verfügung: https://hub.docker.com/r/oydeu/app-relationship/. (Da der Beziehungstracker auch in einer Variante für Smartphones zur Verfügung steht, soll auch das Image `oydeu/app-relationship_mobile` verwendet werden.)  
 Starte den Container und verbinde Dich im Konfigurations-Dialog mit deinem Datentresor.
 
 ### Installation am eigenen Computer/Laptop
 
-Um das Allergie-Tagebuch am eigenen Computer auszuführen, musst du zuerst [eine aktuelle Version von Docker installieren](https://www.docker.com/community-edition#/download). Starte dann das Allergie-Tagebuch mit folgendem Befehl:  
+Um den Beziehungstracker am eigenen Computer auszuführen, musst du zuerst [eine aktuelle Version von Docker installieren](https://www.docker.com/community-edition#/download). Starte dann den Beziehungstracker mit folgendem Befehl:  
 `docker run -p 3838:3838 oydeu/app-relationship`  
 Du kannst dann auf den Beziehungstracker mit deinem Browser unter folgender Adresse zugreifen:  
 `http://192.168.99.100:3838`  
@@ -38,36 +37,38 @@ Du kannst dann auf den Beziehungstracker mit deinem Browser unter folgender Adre
 
 ### Installation am Raspberry Pi
 
-Das Allergie-Tagebuch steht auch für die Architektur armhf zur Verfügung. Die Installation erfolgt dann wie am Computer/Laptop jedoch unter Verwendung des Docker Image `oydeu/app-allergy_armhf`.  
+Der Beziehungstracker steht auch für die Architektur armhf zur Verfügung. Die Installation erfolgt dann wie am Computer/Laptop jedoch unter Verwendung des Docker Image `oydeu/app-relationship_armhf`.  
   
 *Anmerkungen:*  
-* Allergie-Tagebuch am Dockerhub: https://hub.docker.com/r/oydeu/app-allergy_armhf/  
+* Beziehungstracker am Dockerhub: https://hub.docker.com/r/oydeu/app-relationship_armhf/  
 * zur einfachen Installation von Docker am Raspberry empfehlen wir die SD-Card Images von Hypriot: http://blog.hypriot.com/downloads/
-* Befehl zum Start des Containers am Raspberry: `docker run -p 3838:3838 oydeu/app-allergy_armhf`
+* Befehl zum Start des Containers am Raspberry: `docker run -p 3838:3838 oydeu/app-relationship_armhf`
 
 ## Datenstruktur
 
-Die folgenden Listen werden vom Allergie-Tagebuch verwendet:
+Die folgenden Listen werden vom Beziehungstracker verwendet:
 
-* Befinden    
+* Energie #1 und #2    
     - `date`: Datum im Format YYYY-MM-DD    
-    - `value`: Skalierung des Befindens von 1-sehr gut bis 6-sehr schlecht    
-* Medikamenteneinnahme    
-    - `date`: Datum im Format YYYY-MM-DD    p#sub-feature {
-    margin-left: 47px;
-}
-    - `value`: Logisches Feld mit den Werten `true` oder `false`    
-* Tagebuch    
+    - `value`: Skalierung des Befindens von 1-sehr schlecht bis 6-sehr gut    
+* Gesundheit #1 und #2    
+    - `date`: Datum im Format YYYY-MM-DD    
+    - `value`: Skalierung des Befindens von 1-sehr schlecht bis 6-sehr gut  
+* Zufriedenheit #1 und #2    
+    - `date`: Datum im Format YYYY-MM-DD    
+    - `value`: Skalierung des Befindens von 1-sehr schlecht bis 6-sehr gut  
+* Entspannung #1 und #2    
+    - `date`: Datum im Format YYYY-MM-DD    
+    - `value`: Skalierung des Befindens von 1-sehr schlecht bis 6-sehr gut  
+* Gesamt #1 und #2    
+    - `date`: Datum im Format YYYY-MM-DD    
+    - `value`: Skalierung des Befindens von 1-sehr schlecht bis 6-sehr gut  
+* Notizen #1 und #2    
     - `date`: Datum im Format YYYY-MM-DD    
     - `value`: Text    
-* [Pollenbelastung]    
-    - `timestamp`: Zeistempel in Millisekunden seit 1.1.1970 UTC    
-    - `pollType`: Pollen Typ in der Schreibweise wie von https://polleninfo.org verwendet    
-    - `value`: Pollenbelastung in der Skalierung von 0-keine Belastung bis 4-sehr starke Belastung    
-* Allergie-Skript - R Skript zum Import der Pollenbelastung der im Scheduler konfigurierten Orte    
-    - `name`: eindeutiger Name    
-    - `script`: base64 enkodiertes R Skript    
-* Konfiguration und Konfiguration (Mobil) - gespeicherte Filterauswahl für Visualisierung  
+* Konfiguration    
+    - `name1`: Name der 1. Person    
+    - `name2`: Name der 2. Person    
 * Scheduler, Scheduler Verlauf und Scheduler Status  - siehe [service-scheduler](https://github.com/OwnYourData/service-scheduler)  
 * Info - Informationen zum Datentresor
 
