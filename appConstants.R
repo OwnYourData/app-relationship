@@ -6,7 +6,7 @@ appName <- 'relationship'
 appTitle <- 'Beziehungstracker'
 app_id <- 'eu.ownyourdata.relationship'
 helpUrl <- 'https://www.ownyourdata.eu/apps/beziehungstracker/'
-mobileUrl <- 'https://beziehungstracker-mobil.datentresor.org'
+mobileUrl <- 'https://beziehungstracker-mobil.oydapp.eu'
 
 # definition of data structure
 currRepoSelect <- ''
