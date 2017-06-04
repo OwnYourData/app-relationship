@@ -50,7 +50,7 @@ writeRelationshipEmail <- function(person_name, email, person){
                         '&APP_SECRET=', appSecret)
                 relationshipEmailText <- paste0(person_name, 
                         ', bewerte folgende Aspekte für die letzten 7 Tage und verwende dabei ',
-                        'jeweils eine Skala von 1 (sehr gut) bis 6 (sehr schlecht):',
+                        'jeweils eine Skala von 1 (sehr schlecht) bis 6 (sehr gut):',
                         '<ul><li>Energie</li><li>Gesundheit</li><li>Zufrieden sein</li>',
                         '<li>Entspannung</li><li>Gesamt</li></ul>',
                         '<p>Antworte auf dieses Mail und schreibe in jede Zeile den ',
